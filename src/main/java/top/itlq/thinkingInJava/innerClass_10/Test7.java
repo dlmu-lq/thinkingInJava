@@ -1,3 +1,5 @@
+package top.itlq.thinkingInJava.innerClass_10;
+
 class Test7{
 	public void f(){
 		System.out.println("Test7 f(){}");
