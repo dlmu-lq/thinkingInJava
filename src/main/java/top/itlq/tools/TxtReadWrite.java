@@ -9,9 +9,9 @@ import org.junit.Test;
 import java.io.*;
 
 public class TxtReadWrite {
-    private final String readPath="E:\\Projects\\graduate-design\\liqiang\\doc\\data";
-    private final String writePath="E:\\Projects\\graduate-design\\liqiang\\doc\\data\\data.txt";
-    private final String [] types={"inOut","vesselType","time"};
+    private final String readPath="";
+    private final String writePath="";
+    private final String [] types={"one","two","three"};
 
     @Test
     public void test1(){
