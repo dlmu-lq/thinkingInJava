@@ -3,7 +3,7 @@
  * 创建，与数组关系
  * 一些基础方法，打印
  */
-package top.itlq.thinkingInJava.holdingObjects11;
+package top.itlq.thinkingInJava.holdingObjects_11.collectionBase;
 
 
 import org.junit.Test;
@@ -11,7 +11,7 @@ import org.junit.Test;
 import java.util.*;
 
 
-public class ContainersFeatures{
+public class CollectionFeatures{
 //    Collection ArrayList
     public static void main(String[]args){
 //
