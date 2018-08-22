@@ -1,2 +1,2 @@
 # thinkingInJava
-a maven project with reading thinking in java;
+a maven project while reading thinking in java;
