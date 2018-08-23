@@ -1,6 +1,17 @@
 package top.itlq.thinkingInJava.exceptions_12;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.logging.Logger;
+
 public class ExceptionDemo {
+
+    private static final Logger logger = Logger.getLogger("demo");
+    static void logException(Exception e){
+        StringWriter sw = new StringWriter();
+        e.printStackTrace(new PrintWriter(sw));
+        logger.severe(sw.toString());
+    }
 
     void f(){}
 
@@ -9,6 +20,7 @@ public class ExceptionDemo {
         ExceptionDemo demo = null;
         try {
             demo.f();
+
         }catch (Exception e){
             e.printStackTrace(System.out);
         }
@@ -22,7 +34,7 @@ public class ExceptionDemo {
                 System.out.println(arr[start]);
                 flg = 1;
             }catch (ArrayIndexOutOfBoundsException e){
-                e.printStackTrace(System.out);
+                logException(e);
                 start -- ;
             }
         }
