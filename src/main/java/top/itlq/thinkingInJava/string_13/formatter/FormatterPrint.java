@@ -25,6 +25,6 @@ public class FormatterPrint {
     public void test3(){
         Formatter f = new Formatter(System.out);
         f.format("%2$-10s,%1$-5d\n",5,"aaa");
-        f.format("%2$10s,%1$5.2f",5.1,"aaa");
+        f.format("%5.2f,%10s",5.1,"aaa");
     }
 }
