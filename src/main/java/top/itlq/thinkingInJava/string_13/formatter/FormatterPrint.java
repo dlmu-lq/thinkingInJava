@@ -17,5 +17,14 @@ public class FormatterPrint {
         // Formatter 构造器可以接受格式化输出位置，PrintSteam OutputStream File
         Formatter f = new Formatter(System.out);
         f.format("%s  int:%d,float:%f","呵呵呵",1,1.2);
+
+        f = new Formatter(System.err);
+        f.format("%s  int:%d,float:%f","呵呵呵",1,1.2);
+    }
+    @Test
+    public void test3(){
+        Formatter f = new Formatter(System.out);
+        f.format("%2$-10s,%1$-5d\n",5,"aaa");
+        f.format("%2$10s,%1$5.2f",5.1,"aaa");
     }
 }
