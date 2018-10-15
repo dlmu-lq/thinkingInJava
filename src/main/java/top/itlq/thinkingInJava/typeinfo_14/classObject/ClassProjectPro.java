@@ -14,7 +14,7 @@ public class ClassProjectPro {
      */
     @Test
     public void test1(){
-        Class<?> initable = Initable.class; //加载
+        Class<?> initable = Initable.class; //加载，无需初始化 forName需初始化
         System.out.println("after getting Class of Initable");
         String a = Initable.s; // 编译器常量无需初始化
         System.out.println("after getting const of Initable");
@@ -70,10 +70,8 @@ public class ClassProjectPro {
         // cast新式转型
         Class<Initable4> initable4Class = Initable4.class;
         Initable4 initable4 = initable4Class.cast(initable);
-        // 老
+        // 老,常用
         initable4 = (Initable4) initable;
-
-
     }
 }
 
