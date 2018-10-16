@@ -21,10 +21,7 @@ public class TypeCount extends HashMap<Class,Integer> {
 
     public void count(Object obj){
         Class objClass = obj.getClass();
-        if(baseType.isAssignableFrom(objClass)){
-            put(objClass,containsKey(objClass) ? get(objClass) + 1 : 1);
-            countClass(baseType.getSuperclass());
-        }
+        countClass(objClass);
     }
 
     private void countClass(Class cl){
