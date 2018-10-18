@@ -1,11 +1,10 @@
 /**
  * 一个随机创建Pet的抽象类，配置类型方式可以不同方式具体实现
  */
-package top.itlq.thinkingInJava.typeinfo_14.classObject;
+package top.itlq.thinkingInJava.typeinfo_14.classObject.pet;
 
-import top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Pet;
+import top.itlq.thinkingInJava.typeinfo_14.pets.Pet;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -6,8 +6,8 @@
  */
 package top.itlq.thinkingInJava.typeinfo_14.classObject;
 
-import org.junit.Test;
-import top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Pet;
+import top.itlq.thinkingInJava.typeinfo_14.classObject.pet.LiteralPetCreator;
+import top.itlq.thinkingInJava.typeinfo_14.pets.Pet;
 
 import java.util.HashMap;
 import java.util.List;

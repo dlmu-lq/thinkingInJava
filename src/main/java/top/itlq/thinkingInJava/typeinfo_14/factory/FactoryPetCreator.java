@@ -1,7 +1,10 @@
+/**
+ * 注册工厂，统一了同一继承结构下的类的创建方式（多态）；内部类，构造器就是一种工厂方法
+ */
 package top.itlq.thinkingInJava.typeinfo_14.factory;
 
 import org.junit.Test;
-import top.itlq.thinkingInJava.typeinfo_14.classObject.pets.*;
+import top.itlq.thinkingInJava.typeinfo_14.pets.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,15 +17,15 @@ public class FactoryPetCreator {
 
     static {
         // generic array creation 不能创建泛型数组
-        Collections.addAll(petFactoryList, new Cat.CatFactory(),
-                new Dog.DogFactory(),
-                new Hamster.HamsterFactory(),
-                new Manx.ManxFactory(),
-                new Mouse.MouseFactory(),
-                new Mutt.MuttFactory(),
-                new Pug.PugFactory(),
-                new Rat.RatFactory(),
-                new Rodent.RodentFactory());
+        Collections.addAll(petFactoryList, new Cat.Factory(),
+                new Dog.Factory(),
+                new Hamster.Factory(),
+                new Manx.Factory(),
+                new Mouse.Factory(),
+                new Mutt.Factory(),
+                new Pug.Factory(),
+                new Rat.Factory(),
+                new Rodent.Factory());
     }
 
     public Pet createRandom(){
@@ -47,6 +50,6 @@ public class FactoryPetCreator {
     @Test
     public void test(){
         FactoryPetCreator creator = new FactoryPetCreator();
-        System.out.print(creator.createList(5));
+        System.out.print(creator.createList(10));
     }
 }

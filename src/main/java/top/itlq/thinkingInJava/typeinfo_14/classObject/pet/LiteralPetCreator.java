@@ -1,11 +1,8 @@
-package top.itlq.thinkingInJava.typeinfo_14.classObject;
+package top.itlq.thinkingInJava.typeinfo_14.classObject.pet;
 
 import org.junit.Test;
-import top.itlq.thinkingInJava.typeinfo_14.classObject.pets.*;
+import top.itlq.thinkingInJava.typeinfo_14.pets.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class LiteralPetCreator extends PetCreator{

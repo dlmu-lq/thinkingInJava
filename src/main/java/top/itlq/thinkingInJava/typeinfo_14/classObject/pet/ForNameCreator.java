@@ -1,6 +1,6 @@
-package top.itlq.thinkingInJava.typeinfo_14.classObject;
+package top.itlq.thinkingInJava.typeinfo_14.classObject.pet;
 
-import top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Pet;
+import top.itlq.thinkingInJava.typeinfo_14.pets.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +9,15 @@ public class ForNameCreator extends PetCreator{
     private static List<Class<? extends Pet>> types = new ArrayList<Class<? extends Pet>>();
 
     private static String[] typeNames = {
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Cat",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Dog",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Hamster",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Manx",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Mouse",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Mutt",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Pug",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Rat",
-            "top.itlq.thinkingInJava.typeinfo_14.classObject.pets.Rodent",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Cat",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Dog",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Hamster",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Manx",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Mouse",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Mutt",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Pug",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Rat",
+            "top.itlq.thinkingInJava.typeinfo_14.pets.Rodent",
     };
 
     private static void load(){

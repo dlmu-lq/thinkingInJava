@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.typeinfo_14.classObject.pets;
+package top.itlq.thinkingInJava.typeinfo_14.pets;
 
 import org.junit.Test;
 

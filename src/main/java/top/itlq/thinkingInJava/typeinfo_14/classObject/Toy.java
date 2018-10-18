@@ -7,4 +7,14 @@ public class Toy {
     Toy(){
         System.out.println("Toy的构造器！");
     }
+    public Toy(int i){
+        System.out.println("Toy的构造器！" + i);
+    }
+
+    void test1(){
+
+    }
+    public void test2(){
+
+    }
 }
