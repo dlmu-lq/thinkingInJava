@@ -13,7 +13,7 @@ import java.util.Map;
 class DynamicProxyHandler implements InvocationHandler{
 
     private final Object proxied;
-    private final Map<String,Integer> methodsCount = new HashMap<>();
+    public final Map<String,Integer> methodsCount = new HashMap<>();
 
     public DynamicProxyHandler(Object proxied){
         this.proxied = proxied;
@@ -21,11 +21,11 @@ class DynamicProxyHandler implements InvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-//        System.out.print(proxy); // 产生递归
+//        System.out.print(proxy); // proxy为外部创建的代理对象
 //        System.out.print(proxied);
         System.out.println("proxy start");
         System.out.println("real start");
-        methodsCount.put(method.toString(),methodsCount.getOrDefault(method.toString(),0) + 1);
+        methodsCount.put(method.getName(),methodsCount.getOrDefault(method.getName(),0) + 1);
         Object re = method.invoke(proxied,args);
         System.out.println("real end");
         System.out.println("proxy end");
@@ -52,9 +52,11 @@ public class SimpleDynamicProxy {
                 Interface.class.getClassLoader(),
                 new Class[]{Interface.class},
                 handler);
+//        System.out.println(proxy);
         consume(proxy);
         consume(proxy);
         for(Method method:realObj.getClass().getMethods())
-            System.out.println(method.toString() + ":" + ((DynamicProxyHandler) handler).getMethodCount(method.toString()));
+            System.out.println(method.getName() + ":" + ((DynamicProxyHandler) handler).getMethodCount(method.getName()));
+
     }
 }
