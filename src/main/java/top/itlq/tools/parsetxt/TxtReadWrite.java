@@ -2,7 +2,7 @@
  * 读写文件用
  * 读一个文件夹内一些特定格式的txt文件，生成一个js中的一个json对象
  */
-package top.itlq.tools;
+package top.itlq.tools.parsetxt;
 
 import org.junit.Test;
 
