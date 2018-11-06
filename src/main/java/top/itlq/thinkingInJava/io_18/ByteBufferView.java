@@ -5,7 +5,9 @@ package top.itlq.thinkingInJava.io_18;
 
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
@@ -52,6 +54,57 @@ public class ByteBufferView {
      */
     @Test
     public void test3(){
+        ByteBuffer buff = null;
+        try {
+            buff = ByteBuffer.wrap("abcde".getBytes("UTF-16BE"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        CharBuffer charBuffer = buff.asCharBuffer();
+        charBuffer.rewind();
+        upsideDown(charBuffer);
+        while (buff.hasRemaining())
+            System.out.print(buff.getChar());
+    }
 
+
+
+    public static void upsideDown(CharBuffer charBuffer){
+        char [] chars = new char[charBuffer.capacity()];
+        int i = 0;
+        while (charBuffer.hasRemaining())
+            chars[i++] = charBuffer.get();
+        charBuffer.rewind();
+        i = chars.length;
+        while (charBuffer.hasRemaining()){
+            charBuffer.put(chars[--i]);
+        }
+    }
+
+    /**
+     * 交换字符串的一部分，使用ByteBuff的mark和reset
+     */
+    @Test
+    public void test4(){
+        char [] chars = "abcdef".toCharArray();
+        ByteBuffer buff = ByteBuffer.allocate(chars.length * 2);
+        CharBuffer charBuffer = buff.asCharBuffer();
+        charBuffer.put(chars);
+        System.out.println("空" + charBuffer);
+        charBuffer.rewind();
+        System.out.println(charBuffer);
+        symmetricScramble(charBuffer);
+        System.out.println(charBuffer.rewind()); // 必须rewind才能输出
+    }
+
+    public static void symmetricScramble(CharBuffer charBuffer){
+        while (charBuffer.hasRemaining()){
+            charBuffer.mark();
+            char c1 = charBuffer.get();
+            char c2 = charBuffer.get();
+            char c3 = charBuffer.get();
+            charBuffer.reset();
+            charBuffer.put(c3).put(c2).put(c1);
+        }
     }
 }

@@ -13,9 +13,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.SortedMap;
 
 public class NewIO {
-    static String filePath = "src/main/java/top/itlq/thinkingInJava/io_18/test";
-    static String filePath2 = "src/main/java/top/itlq/thinkingInJava/io_18/test2";
-    static String filePath3 = "src/main/java/top/itlq/thinkingInJava/io_18/test3";
+    static String filePath = "src/main/resources/io/test";
+    static String filePath2 = "src/main/resources/io/test2";
+    static String filePath3 = "src/main/resources/io/test3";
 
     /**
      * 通过ByteBuffer缓冲器，FileChannel 读写文件；

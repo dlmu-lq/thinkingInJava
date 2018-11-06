@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class NormalIOExample {
 
-    static String filePath = "src/main/java/top/itlq/thinkingInJava/io_18/test";
+    static String filePath = "src/main/resources/io/test";
     /**
      * 按行读取字符文件
      * FileReader() BufferedReader装饰器，readLine()会将换行符去掉
