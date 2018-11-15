@@ -44,4 +44,12 @@ public class MapExercise {
         }
         System.out.println(linkedHashMap);
     }
+
+    @Test
+    public void test3(){
+        Map<String,String> map = new HashMap<>();
+        map.put("testKey","testValue");
+        for(Map.Entry<String,String> entry:map.entrySet())
+            System.out.print(entry.getKey() + ":" + entry.getValue());
+    }
 }
