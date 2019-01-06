@@ -12,6 +12,6 @@ public class A {
 
     @Override
     public String toString() {
-        return "i:" + i + "," + "j:" + j + "," + "s:" + s +"," + "finalS" + finalS;
+        return "i:" + i + "," + "j:" + j + "," + "s:" + s +"," + "finalS:" + finalS;
     }
 }
