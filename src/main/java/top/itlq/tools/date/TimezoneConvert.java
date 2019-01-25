@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
+/**
+ * 日期格式化（包含时区）
+ */
 public class TimezoneConvert {
     @Test
     public void test1() throws Exception{

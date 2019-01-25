@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class BaseTest {
     /**
@@ -74,4 +75,32 @@ public class BaseTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void test3(){
+        XWPFTemplate template = XWPFTemplate.compile("src/main/java/top/itlq/tools/poitlword/analysis.docx");
+        Map<String,Object> oneVoyageMap = new HashMap<>();
+        oneVoyageMap.put("fd",12);
+        oneVoyageMap.put("fgps","aa");
+        oneVoyageMap.put("fgdc","aa");
+        oneVoyageMap.put("fcgp","aa");
+        oneVoyageMap.put("fcs","aa");
+        oneVoyageMap.put("fcca","aa");
+        oneVoyageMap.put("fccs","aa");
+        oneVoyageMap.put("fmac","aa");
+        oneVoyageMap.put("fmic","aa");
+
+        template.render(oneVoyageMap);
+        try {
+            FileOutputStream out = new FileOutputStream("src/main/java/top/itlq/tools/poitlword/re.docx");
+            try {
+                template.write(out);
+            }finally {
+                out.close();
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
 }
