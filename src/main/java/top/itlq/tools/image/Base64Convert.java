@@ -27,4 +27,13 @@ public class Base64Convert {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void test2(){
+        System.out.println(new String(Base64.getEncoder().encode("".getBytes())));
+    }
+    @Test
+    public void test3(){
+        System.out.println(new String(Base64.getDecoder().decode("".getBytes())));
+    }
 }
