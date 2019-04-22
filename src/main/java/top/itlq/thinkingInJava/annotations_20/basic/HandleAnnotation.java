@@ -18,6 +18,7 @@ public class HandleAnnotation {
     }
 
     /**
+     * 利用Class的反射机制，获取被注解的方法
      * 例，获取源代码方法上的注解，获取其数据
      */
     @Test
