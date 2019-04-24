@@ -1,9 +1,8 @@
-package top.itlq.thinkingInJava.annotations_20.basic.database;
+package top.itlq.thinkingInJava.annotations_20.databaseTest;
 
 import org.junit.Test;
 
 import java.lang.annotation.Annotation;
-import java.lang.annotation.Target;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;

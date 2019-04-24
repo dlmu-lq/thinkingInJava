@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.annotations_20.basic.database;
+package top.itlq.thinkingInJava.annotations_20.databaseTest;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
