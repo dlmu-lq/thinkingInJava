@@ -13,7 +13,8 @@ public class TestLinkedList {
         //访问第一个元素，空容器，抛异常；
         System.out.println("stringList1.getFirst() " + stringList1.getFirst());
         System.out.println("stringList1.element() " + stringList1.element());
-        // 访问第一个元素，空容器，返回null
+        // 访问第一个元素，
+        // 空容器，返回null
         System.out.println("stringList1.peek() " + stringList1.peek());
         System.out.println(stringList1);
 
