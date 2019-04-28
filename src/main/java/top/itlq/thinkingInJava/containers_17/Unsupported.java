@@ -8,7 +8,7 @@ import java.util.*;
  * 测试UnsupportedOperationException
  * @param <T>
  */
-public class SelfCollection<T> extends AbstractCollection<T> {
+public class Unsupported<T> extends AbstractCollection<T> {
     @Override
     public Iterator<T> iterator() {
         return null;
@@ -21,7 +21,7 @@ public class SelfCollection<T> extends AbstractCollection<T> {
 
     public static void main(String...args){
         // 未或实现的操作
-        new SelfCollection<>().add(new Object());
+        new Unsupported<>().add(new Object());
     }
 
     static void testUnsupported(List<String> list){
