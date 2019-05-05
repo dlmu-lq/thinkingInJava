@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.containers_17;
+package top.itlq.thinkingInJava.containers_17.collections;
 
 import org.junit.Test;
 
