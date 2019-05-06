@@ -2,7 +2,14 @@ package top.itlq.thinkingInJava.containers_17.collections;
 
 import java.util.*;
 
-public class Lists {
+/**
+ * listIterator的一些操作
+ */
+public class ListIteratorOperations {
+    /**
+     * listIterator 的操作 add next remove set
+     * @param list
+     */
     static void iterManipulation(List<String> list){
         ListIterator<String> listIterator = list.listIterator();
 //        listIterator.remove();//        set  remove 等操作均针对上一个访问的元素，在其之前需保证访问过元素，即next()
@@ -18,6 +25,10 @@ public class Lists {
         System.out.println(list);
     }
 
+    /**
+     * 隔元素插入，add之后 游标会 + 1；
+     * @param list
+     */
     static void testPreviousInsert(List<String> list){
         ListIterator<String> listIterator = list.listIterator(list.size() - 1);
         listIterator.add("2.5");
