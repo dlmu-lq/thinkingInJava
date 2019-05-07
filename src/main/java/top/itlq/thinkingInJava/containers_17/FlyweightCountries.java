@@ -3,7 +3,7 @@ package top.itlq.thinkingInJava.containers_17;
 import java.util.*;
 
 /**
- * 使用 享元设计模式 来用自定义的Map，Entry，Set 访问原数据，而不用另外创建全部数据占太大空间
+ * 使用 享元设计模式 来用自定义的Map，MapEntry，Set 访问原数据，而不用另外创建全部数据占太大空间
  * 只读数据时
  * 此处数据为countries数据
  */
@@ -131,7 +131,7 @@ public class FlyweightCountries {
     public static void main(String...args){
         System.out.println(select());
         // 这里继承实现的map是最基础的只读的，添加操作需要继承实现更多的原来抛出异常的方法
-//        select().entrySet().add(new FlyweightMap.Entry(1));
+//        select().entrySet().add(new FlyweightMap.MapEntry(1));
         System.out.println();
         System.out.println(select(2));
         System.out.println();
