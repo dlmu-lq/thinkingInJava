@@ -20,5 +20,7 @@ public class Implements {
         // Queue
         new LinkedList<>();
         new PriorityQueue<>();
+
+//        Collections.sort(new ArrayList<>());
     }
 }

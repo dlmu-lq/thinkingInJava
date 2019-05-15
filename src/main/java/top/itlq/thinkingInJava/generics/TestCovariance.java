@@ -57,6 +57,21 @@ public class TestCovariance {
         B b = generic2.f();
     }
 
+
+    /**
+     * 协变，逆变泛型参数
+     * @param generic2
+     * @param <T>
+     * @return
+     */
+    public static <T> T f1(Generic2<? extends T> generic2){
+        return generic2.f();
+    }
+
+    public static <T> void f1(Generic1<? super T> generic1, T item){
+        generic1.f(item);
+    }
+
     /**
      * 无界通配符
      */
