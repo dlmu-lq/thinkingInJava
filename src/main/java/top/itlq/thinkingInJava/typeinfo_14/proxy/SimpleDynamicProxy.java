@@ -44,7 +44,7 @@ public class SimpleDynamicProxy {
 //        System.out.println(obj);
     }
 
-    public static void main(String [] args){
+    public static void main(String [] args) {
         Interface realObj = new RealObject();
         consume(realObj);
         InvocationHandler handler = new DynamicProxyHandler(realObj);
@@ -55,7 +55,7 @@ public class SimpleDynamicProxy {
 //        System.out.println(proxy);
         consume(proxy);
         consume(proxy);
-        for(Method method:realObj.getClass().getMethods())
+        for (Method method : realObj.getClass().getMethods())
             System.out.println(method.getName() + ":" + ((DynamicProxyHandler) handler).getMethodCount(method.getName()));
 
     }
