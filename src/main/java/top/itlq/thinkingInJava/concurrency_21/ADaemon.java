@@ -10,7 +10,8 @@ public class ADaemon implements Runnable{
     public void run() {
         try {
             System.out.println("1");
-            TimeUnit.MILLISECONDS.sleep(1);
+            new Thread(new ChildRun()).start();
+            TimeUnit.MILLISECONDS.sleep(50);
         }catch (Exception e){
             e.printStackTrace();
         }finally {
@@ -18,9 +19,25 @@ public class ADaemon implements Runnable{
         }
     }
 
-    public static void main(String...args){
+    class ChildRun implements Runnable{
+
+        @Override
+        public void run() {
+            while (true){
+                try {
+                    TimeUnit.MILLISECONDS.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread() + " " + this);
+            }
+        }
+    }
+
+    public static void main(String...args) throws Exception{
         Thread thread = new Thread(new ADaemon());
         thread.setDaemon(true);
         thread.start();
+        TimeUnit.MILLISECONDS.sleep(50);
     }
 }
