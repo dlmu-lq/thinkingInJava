@@ -1,7 +1,5 @@
 package top.itlq.thinkingInJava.concurrency_21;
 
-import org.junit.Test;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -11,8 +9,8 @@ import java.util.concurrent.Executors;
 public class SingleThreadExecutor {
     public static void main(String[]args){
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        executorService.execute(new ListOff());
-        executorService.execute(new ListOff());
+        executorService.execute(new LiftOff());
+        executorService.execute(new LiftOff());
         executorService.shutdown();
     }
 }

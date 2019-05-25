@@ -5,7 +5,7 @@ package top.itlq.thinkingInJava.concurrency_21;
  */
 public class MainThread {
     public static void main(String...args){
-        ListOff launch = new ListOff();
+        LiftOff launch = new LiftOff();
         launch.run();
     }
 }

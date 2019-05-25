@@ -6,7 +6,7 @@ package top.itlq.thinkingInJava.concurrency_21;
 public class BasicThreads {
     public static void main(String...args){
         for(int i=0;i<5;i++){
-            new Thread(new ListOff()).start();
+            new Thread(new LiftOff()).start();
         }
         System.out.println("main thread");
     }
