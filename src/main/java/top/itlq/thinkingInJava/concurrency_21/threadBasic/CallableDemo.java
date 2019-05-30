@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.threadBasic;
 
 import java.util.concurrent.*;
 

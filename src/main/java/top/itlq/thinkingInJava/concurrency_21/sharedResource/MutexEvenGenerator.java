@@ -1,10 +1,10 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.sharedResource;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 一个看起来正确的（在多线程中会失败）的偶数生成器
+ * 使用Lock的互斥锁偶数生成器
  */
 public class MutexEvenGenerator extends IntGenerator {
     private int currentValue = 0;

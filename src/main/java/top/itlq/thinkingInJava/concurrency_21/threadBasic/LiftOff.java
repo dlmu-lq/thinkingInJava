@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.threadBasic;
 
 /**
  * 一个Runnable对象

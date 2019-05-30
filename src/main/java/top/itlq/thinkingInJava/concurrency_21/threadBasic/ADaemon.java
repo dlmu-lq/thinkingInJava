@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.threadBasic;
 
 import java.util.concurrent.TimeUnit;
 
@@ -38,6 +38,6 @@ public class ADaemon implements Runnable{
         Thread thread = new Thread(new ADaemon());
         thread.setDaemon(true);
         thread.start();
-        TimeUnit.MILLISECONDS.sleep(50);
+        TimeUnit.MILLISECONDS.sleep(20);
     }
 }

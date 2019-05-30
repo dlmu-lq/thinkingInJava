@@ -1,7 +1,7 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.sharedResource;
 
 /**
- * 修改多线程情况下错误的偶数生成器，将生成方法改为同步
+ * 修改多线程情况下错误的偶数生成器，将生成方法改为synchronized同步
  */
 public class SynchronizedEvenGenerator extends IntGenerator {
     private int currentValue = 0;

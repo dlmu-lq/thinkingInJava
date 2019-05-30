@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.sharedResource;
 
 /**
  * 一个同步方法修改，另一个非同步方法返回，有可能获取到不稳定状态；

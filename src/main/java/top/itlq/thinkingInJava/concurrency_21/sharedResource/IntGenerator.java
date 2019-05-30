@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.sharedResource;
 
 public abstract class IntGenerator {
     // 原子性，可见性都保证；

@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.sharedResource;
 
 import java.util.Timer;
 import java.util.TimerTask;
