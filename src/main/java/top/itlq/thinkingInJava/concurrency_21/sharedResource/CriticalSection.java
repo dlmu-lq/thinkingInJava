@@ -1,9 +1,9 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.sharedResource;
 
 /**
  * 将一个线程不安全的类封装为线程安全的（控制其所有访问）；
  * 在决定同步方法还是代码块时，考虑那些需要防护，那些不需要防护，
- * 如果存在不需要防护的则可以放在同步代码块之外，使对象加锁的时间减短
+ * 如果存在不需要防护的耗时操作则可以放在同步代码块之外，使对象加锁的时间减短
  */
 
 import java.util.ArrayList;
