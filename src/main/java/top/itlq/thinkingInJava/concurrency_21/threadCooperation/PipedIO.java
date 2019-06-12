@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.threadCooperation;
 
 import java.io.IOException;
 import java.io.PipedReader;
