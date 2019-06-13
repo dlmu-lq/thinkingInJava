@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.terminateThread;
 
 import java.util.ArrayList;
 import java.util.List;

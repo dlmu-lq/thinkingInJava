@@ -1,12 +1,7 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.terminateThread;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.ServerSocket;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * 阻塞中断
@@ -82,7 +77,8 @@ class SynchBlocked implements Runnable{
 
 public class Interrupting {
 
-    private static ExecutorService executorService = Executors.newCachedThreadPool();
+    private static ExecutorService executorService = new ThreadPoolExecutor(0, 10,
+            60L, TimeUnit.SECONDS, new SynchronousQueue<>(), (ThreadFactory) Thread::new);
 
     public static void test(Runnable r) throws Exception{
         Future<?> future = executorService.submit(r);
