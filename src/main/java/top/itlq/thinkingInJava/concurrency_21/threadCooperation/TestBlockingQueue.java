@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.threadCooperation;
 
 import top.itlq.thinkingInJava.concurrency_21.threadBasic.LiftOff;
 
