@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -93,7 +94,7 @@ public class NewIO {
     }
 
     /**
-     * ByteBuffer与字符转换 直接asCharBuffer()。toString()不好用
+     * ByteBuffer与字符转换 直接asCharBuffer().toString()不好用
      * Charset.decode();   getBytes("UTF-16BE") ;
      * asCharBuffer().put("text") asCharBuffer.toString()
      */
@@ -119,7 +120,7 @@ public class NewIO {
                 FileChannel out = new FileOutputStream(filePath3).getChannel();
 
                 bb = ByteBuffer.allocate(1024); // 此处clear()也没用，不能复用
-                bb.asCharBuffer().put("test");
+                bb.asCharBuffer().put("test"); // 默认使用UTF-16BE编码
                 out.write(bb);
                 in = new FileInputStream(filePath3).getChannel();
                 bb.clear();
@@ -174,5 +175,22 @@ public class NewIO {
             e.printStackTrace();
         }
 
+    }
+
+    /**
+     * ByteBuffer 视图和存储次序
+     */
+    @Test
+    public void test7(){
+        ByteBuffer buffer = ByteBuffer.allocate(14);
+        buffer.asCharBuffer().put("abcdef总");
+        System.out.println(new String(buffer.array(), StandardCharsets.UTF_16BE));
+        // 切换到小端，存储次序已乱
+        buffer.clear();
+        buffer.order(ByteOrder.LITTLE_ENDIAN);
+        buffer.asCharBuffer().put("abcdef总");
+        System.out.println(new String(buffer.array(), StandardCharsets.UTF_16BE));
+        // 但使用缓冲器读取没问题
+        System.out.println(buffer.asCharBuffer());
     }
 }
