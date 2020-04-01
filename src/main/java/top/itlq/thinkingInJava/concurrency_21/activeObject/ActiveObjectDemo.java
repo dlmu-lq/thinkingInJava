@@ -50,6 +50,7 @@ public class ActiveObjectDemo {
             results.add(d1.addInt(i,i));
         }
         while (results.size() > 0){
+            System.out.println(1);
             for(Future<?> future:results){
                 if(future.isDone()){
                     System.out.println(future.get());

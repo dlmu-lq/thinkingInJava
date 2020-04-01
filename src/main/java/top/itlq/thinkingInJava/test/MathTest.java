@@ -9,5 +9,6 @@ public class MathTest {
         System.out.println(new BigInteger("-7").remainder(new BigInteger("4")));
         System.out.println(new BigInteger("-7").mod(new BigInteger("4")));
         System.out.println(new BigInteger("-5").mod(new BigInteger("3")));
+        System.out.println(Math.floorMod(-7, 4));
     }
 }

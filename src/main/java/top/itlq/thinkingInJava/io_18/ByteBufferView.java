@@ -17,7 +17,7 @@ public class ByteBufferView {
      * 注意put方法
      */
     @Test
-    public void test1(){
+    public void testIntChar(){
         ByteBuffer buff = ByteBuffer.allocate(1024);
         IntBuffer intBuffer = buff.asIntBuffer();
         intBuffer.put(65);
@@ -34,7 +34,7 @@ public class ByteBufferView {
      * double
      */
     @Test
-    public void test2(){
+    public void testNumberBuffer(){
         ByteBuffer buff = ByteBuffer.wrap(new byte[]{0,0,0,65});
         while (buff.hasRemaining())
             System.out.println("char：" + buff.getChar());

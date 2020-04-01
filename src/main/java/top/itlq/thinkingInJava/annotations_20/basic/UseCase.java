@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 // 元注解，应用级别，源代码/类文件/运行时
 @Retention(RetentionPolicy.RUNTIME)
 // 允许继承
-//@Inherited
+@Inherited
 public @interface UseCase {
     // 使用注解时可以赋的元数据
     public int id();

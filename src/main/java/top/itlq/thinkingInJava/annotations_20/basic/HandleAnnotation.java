@@ -17,6 +17,13 @@ public class HandleAnnotation {
 
     }
 
+    static class DerivedHandleAnnotation extends HandleAnnotation{
+        @Override
+        public void test2(){
+
+        }
+    }
+
     /**
      * 利用Class的反射机制，获取被注解的方法
      * 例，获取源代码方法上的注解，获取其数据
@@ -34,5 +41,15 @@ public class HandleAnnotation {
                 System.out.println(m.getName());
             }
         }
+    }
+
+    @Test
+    void testDerived() throws NoSuchMethodException {
+        // getDeclaredMethod 与 getMethod的不同
+//        Method method = DerivedHandleAnnotation.class.getDeclaredMethod("test1");
+        Method method = DerivedHandleAnnotation.class.getMethod("test1");
+        Method method1 = DerivedHandleAnnotation.class.getMethod("test2");
+        System.out.println(method.getAnnotation(UseCase.class));
+        System.out.println(method1.getAnnotation(UseCase.class));
     }
 }
