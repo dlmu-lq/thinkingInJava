@@ -1,4 +1,4 @@
-package top.itlq.thinkingInJava.concurrency_21;
+package top.itlq.thinkingInJava.concurrency_21.terminateThread;
 
 import top.itlq.thinkingInJava.concurrency_21.terminateThread.IOBlocked;
 

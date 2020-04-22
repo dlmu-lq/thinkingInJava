@@ -50,7 +50,9 @@ public class CollectionFeatures{
         Collections.addAll(list3,new Integer[2]);
         Collections.addAll(list3,3,4,new Integer[2]);
         Collections.addAll(list3, Arrays.asList(1,2)); //添加一个Collection至Collection
-//
+        // Arrays.asList 接收一个容器，
+        System.out.println("Arrays.asList(Arrays.asList(1,2,3)):" + Arrays.asList(Arrays.asList(1,2,3)));
+        //
 //        list3.addAll(1,2) //Collection.addAll()不能接受可变参数，只能接受一个Collection
         list3.addAll(list2);
 
