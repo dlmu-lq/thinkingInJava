@@ -125,13 +125,15 @@ public class NormalIOExample {
      * 读写随机 访问文件 RandomAccessFile
      * DataInput DataOutput, 写入覆盖？试试
      * 注意，不能装饰，因为其不属于 Input/OutputStream ,由内存映射代替
+     * 读写当前位置指针，读取0位置，写入从1位置开始
      */
     @Test
-    public void test6(){
+    public void testRandomAccessFile(){
         try {
             RandomAccessFile randomAccessFile = new RandomAccessFile(filePath,"rw");
             try{
                 System.out.println((char) randomAccessFile.read());
+                randomAccessFile.seek(2);
                 randomAccessFile.write("新增9".getBytes()); // 会覆盖后面字节位置
             }finally {
                 randomAccessFile.close();

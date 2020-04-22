@@ -173,7 +173,7 @@ class AtomicAccumulator extends Accumulator{
         return value.get();
     }
     @Override
-    public synchronized void modify() {
+    public void modify() {
         // 复合操作已不能保证原子性，只为测试效果
         value.set(values[index.getAndAdd(1)]);
         if(index.get() == size)

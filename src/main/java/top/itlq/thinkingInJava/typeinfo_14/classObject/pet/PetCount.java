@@ -19,10 +19,13 @@ public class PetCount extends HashMap<Class<? extends Pet>,Integer> {
      * @param pet
      */
     public void count(Pet pet){
-        for(Map.Entry<Class<? extends Pet>,Integer> entry: entrySet()){
-            if(entry.getKey().isInstance(pet))
-                put(entry.getKey(),entry.getValue()+ 1);
-        }
+//        for(Map.Entry<Class<? extends Pet>,Integer> entry: entrySet()){
+//            if(entry.getKey().isInstance(pet))
+//                put(entry.getKey(),entry.getValue()+ 1);
+//        }
+        entrySet().stream()
+                .filter(pair->pair.getKey().isInstance(pet))
+                .forEach(pair->pair.setValue(pair.getValue() + 1));
     }
 
     public String toString(){

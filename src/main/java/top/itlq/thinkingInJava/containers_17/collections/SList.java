@@ -11,6 +11,11 @@ public class SList<E> implements Iterable<E>{
 
     private Node<E> last;
 
+    public SList(){
+        first = null;
+        last = null;
+    }
+
     private static class Node<E>{
          E item;
          Node<E> next;
@@ -22,10 +27,11 @@ public class SList<E> implements Iterable<E>{
 
     public class SListIterator implements Iterator<E> {
 
+        // 上一个next访问过的元素
         private Node<E> current;
 
         SListIterator(){
-            current = first;
+            current = new Node<>(null, first);
         }
 
         @Override
@@ -44,20 +50,33 @@ public class SList<E> implements Iterable<E>{
          */
         @Override
         public void remove() {
-            Node<E> cNext = current.next;
-            current.next = cNext!=null?cNext.next:null;
+            if(current == first){
+                first = first.next;
+                current = first;
+                return;
+            }
+            Node<E> oper = first;
+            while (oper != null){
+                if(oper.next == current){
+                    oper.next = current.next;
+                    // 移除后，光标移向下一个；
+                    current = oper.next;
+                    break;
+                }
+                oper = oper.next;
+            }
         }
 
         /**
-         * 只能在第一个位置add
+         * 只能在最后add
          * @param item
          */
         public void add(E item) {
-            if(current == null){
-                first = current = new Node<>(item, null);
+            Node<E> n = new Node<>(item,null);
+            if(first == null){
+                first = last = n;
             }else{
-                current.next = new Node<>(item,current.next);
-                current = current.next;
+                last = last.next = n;
             }
         }
     }
@@ -86,9 +105,15 @@ public class SList<E> implements Iterable<E>{
         sListIterator.add("1");
         sListIterator.add("2");
         sListIterator.add("3");
+        for(String s:sList){
+            System.out.println(s);
+        }
         System.out.println(sList);
 
-        sList.iterator().remove();
+        SList.SListIterator sListIterator2 = sList.iterator();
+        sListIterator2.next();
+        sListIterator2.next();
+        sListIterator2.remove();
         System.out.println(sList);
     }
 

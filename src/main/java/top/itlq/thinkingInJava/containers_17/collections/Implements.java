@@ -7,7 +7,8 @@ import java.util.*;
 /**
  * Collection的实现
  */
-public class Implements {
+public class
+Implements {
     @Test
     public void test(){
         // List

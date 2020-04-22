@@ -21,7 +21,7 @@ public class CloseResource {
         executorService.execute(new IOBlocked(System.in));
         TimeUnit.MILLISECONDS.sleep(100);
         System.out.println("shutting down all threads");
-        // 必须调用，如果不发送中断线程的interrupt信号，直接关闭底层资源，线程会抛出异常且无法通过Thread.
+        // 必须调用，如果不发送中断线程的interrupt信号，直接关闭底层资源，线程会抛出异常且无法通过Thread.interrupted()发现线程中断而直接抛出异常
         executorService.shutdownNow();
         TimeUnit.SECONDS.sleep(1);
         System.out.println("Closing " + socketInput.getClass().getName());

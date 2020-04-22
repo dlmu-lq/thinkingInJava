@@ -71,7 +71,8 @@ public class MappedIOTest {
                     try {
                         RandomAccessFile fc = new RandomAccessFile("src/main/resources/io/temp","rw");
                         try {
-                            for (int i=0;i<10*1024*1024/2;i++)
+                            int nums = 10*1024*1024/2;
+                            for (int i=0;i<nums;i++)
                                 fc.writeChar('x');
                         }finally {
                             fc.close();
